@@ -21,9 +21,11 @@ nextButtonXPath = '/html/body/div[1]/div[2]/div/div[2]/div[1]/div[1]/ul[2]/li[2]
 dateXPath = '/html/body/div[1]/div[2]/div/div[2]/div[1]/div[2]/table[1]/tbody/tr[6]/td[3]' #3월29일 화요일
 periodOptionXPath = '/html/body/div[1]/div[2]/div/div[2]/div[2]' #메뉴 옵션 선택
 periodXPath = '/html/body/div[1]/div[2]/div/div[2]/div[2]/ul/li[2]/a' #2박 3일
-positionXPath = '/html/body/div[1]/div[2]/div/div[3]/div[2]/div/img[19]' # 위치 1-18
+positionXPath = '/html/body/div[1]/div[2]/div/div[3]/div[2]/div/img[20]' # 위치 1-19
 reservationXPath = '/html/body/div[1]/div[2]/div/div[1]/div/p/a'
+facilityXPath = '/html/body/div[1]/div[2]/div/div[2]/div[3]/div/div[1]/table/tbody/tr[5]/td[1]/input' # 제 2야영장(오토캠핑)
 
+# 크롬 실행, 홈페이지 열기
 s = Service(chromeDriverPath)
 chromeDriver = webdriver.Chrome(service=s)
 chromeDriver.get(pageLinkAddress)
@@ -59,26 +61,6 @@ while passFlag == 0 :
     except:
         ...
 
-# 다음달로 이동
-passFlag = 0
-while passFlag == 0 :
-    try:
-        nextButton = chromeDriver.find_element(By.XPATH, value=nextButtonXPath)
-        nextButton.click()
-        passFlag = 1
-    except:
-        ...
-
-# 날짜 선택
-passFlag = 0
-while passFlag == 0 :
-    try:
-        dateButton = chromeDriver.find_element(By.XPATH, value=dateXPath)
-        dateButton.click()
-        passFlag = 1
-    except:
-        ...
-
 # 사용 일수 옵션 선택
 passFlag = 0
 while passFlag == 0 :
@@ -99,6 +81,36 @@ while passFlag == 0:
     except:
         ...
 
+# 시설 선택
+passFlag = 0
+while passFlag == 0:
+    try:
+        facilityButton = chromeDriver.find_element(By.XPATH, value=facilityXPath)
+        facilityButton.click()
+        passFlag = 1
+    except:
+        ...
+
+# 다음달로 이동
+passFlag = 0
+while passFlag == 0 :
+    try:
+        nextButton = chromeDriver.find_element(By.XPATH, value=nextButtonXPath)
+        nextButton.click()
+        passFlag = 1
+    except:
+        ...
+
+# 날짜 선택
+passFlag = 0
+while passFlag == 0 :
+    try:
+        dateButton = chromeDriver.find_element(By.XPATH, value=dateXPath)
+        dateButton.click()
+        passFlag = 1
+    except:
+        ...
+
 # 위치 선택
 passFlag = 0
 while passFlag == 0 :
@@ -110,7 +122,7 @@ while passFlag == 0 :
     except:
         ...
 
-#예약하기 클릭
+#예매하기 클릭
 passFlag = 0
 while passFlag == 0 :
     try:
