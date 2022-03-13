@@ -7,12 +7,8 @@ import time
 import urllib.request
 import time
 
+chromeDriverPath = 'C:/Johnny/ChromeDriver/chromedriver.exe'
 pageLinkAddress = 'https://camp.xticket.kr/web/main?shopEncode=d92f3bd48a33183707d6d8bfce8238949624e25b7f23c18487570e3edac7fc3e'
-
-serverTime = urllib.request.urlopen('https://google.com').headers['Date']
-
-
-
 
 userId = 'ph6601'
 userPassword = 'dltjswjd1wh'
@@ -28,7 +24,7 @@ periodXPath = '/html/body/div[1]/div[2]/div/div[2]/div[2]/ul/li[2]/a' #2박 3일
 positionXPath = '/html/body/div[1]/div[2]/div/div[3]/div[2]/div/img[19]' # 위치 1-18
 reservationXPath = '/html/body/div[1]/div[2]/div/div[1]/div/p/a'
 
-s = Service("C:/dev/chromedriver/chromedriver.exe")
+s = Service(chromeDriverPath)
 chromeDriver = webdriver.Chrome(service=s)
 chromeDriver.get(pageLinkAddress)
 handles = chromeDriver.window_handles
