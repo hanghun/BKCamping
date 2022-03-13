@@ -3,10 +3,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import time
 
-# -*- coding: utf-8 -*-
-import urllib.request
-import time
-
 chromeDriverPath = 'C:/Johnny/ChromeDriver/chromedriver.exe'
 pageLinkAddress = 'https://camp.xticket.kr/web/main?shopEncode=d92f3bd48a33183707d6d8bfce8238949624e25b7f23c18487570e3edac7fc3e'
 
@@ -19,6 +15,7 @@ passwordXPath = '/html/body/div[1]/div[1]/div[2]/fieldset/form/ul[1]/li[2]/input
 loginXPath = '/html/body/div[1]/div[1]/div[2]/fieldset/form/ul[1]/li[3]/a'
 nextButtonXPath = '/html/body/div[1]/div[2]/div/div[2]/div[1]/div[1]/ul[2]/li[2]/a'
 targetDateXPath = '/html/body/div[1]/div[2]/div/div[2]/div[1]/div[2]/table[1]/tbody/tr[2]/td[6]'  # 4월 1일
+
 
 reservationXPath = '/html/body/div[1]/div[2]/div/div[1]/div/p/a'
 
